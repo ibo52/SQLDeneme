@@ -1,4 +1,4 @@
-CREATE DATABASE StajDB;
+CREATE DATABASE EnvanterDB;
 
 CREATE TABLE Depo(id int identity(1,1), ad varchar(25) NOT NULL, adres varchar(256) NOT NULL);
 
