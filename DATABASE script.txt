@@ -1,0 +1,12 @@
+CREATE DATABASE StajDB;
+
+CREATE TABLE Depo(id int identity(1,1), ad varchar(25) NOT NULL, adres varchar(256) NOT NULL);
+
+CREATE TABLE Personel(id int identity(1,1) ,ad varchar(25) NOT NULL,soyad varchar(25) NOT NULL,yetki int NOT NULL);
+
+--urin id sınıf id ile aynı olacak
+--oylelikle urun id, sınıf tablosunda denk gelen açıklamayı içerecek
+--urun birden fazla depoda olabilir, id primary olmayacak
+CREATE TABLE Urun(sinifId int identity(1,1), adet int NOT NULL, fiyat int NOT NULL, depoId int NOT NULL, girisTarihi datetime DEFAULT(getdate()), cikisTarihi datetime NOT NULL );
+
+CREATE TABLE Sınıf(id int identity(1,1), ad varchar(25) NOT NULL, açıklama varchar(96) NOT NULL, etiket varchar(25), ustSinif int, dosyaAdresi varchar(1024) NOT NULL);
